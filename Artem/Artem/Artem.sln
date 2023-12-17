@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Artem", "Artem\Artem.csproj", "{375BAB46-57BA-46DD-9E1A-91F3A0F5CACA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{375BAB46-57BA-46DD-9E1A-91F3A0F5CACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375BAB46-57BA-46DD-9E1A-91F3A0F5CACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375BAB46-57BA-46DD-9E1A-91F3A0F5CACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375BAB46-57BA-46DD-9E1A-91F3A0F5CACA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41D1B6E2-62D6-4889-92D7-753853C1F1E0}
+	EndGlobalSection
+EndGlobal

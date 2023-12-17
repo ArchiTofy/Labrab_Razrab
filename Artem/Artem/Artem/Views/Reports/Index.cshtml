@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Artem.Models.Report>
+
+@{
+    ViewData["Title"] = "Список отчетов";
+}
+
+<h1>Список отчетов</h1>
+
+<p>
+    <a asp-action="Create">Создать новый отчет</a>
+</p>
+
+<form asp-controller="Reports" asp-action="Index" method="get">
+    <div class="form-group">
+        <label for="OperationType">Фильтр по типу операции:</label>
+        <select class="form-control" id="OperationType" name="OperationType">
+            <option value="">Все</option>
+            @foreach (var operationType in Enum.GetValues(typeof(Artem.Models.OperationType)))
+            {
+                <option value="@operationType">@operationType</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Применить фильтр</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ФИО оператора</th>
+            <th>Деталь</th>
+            <th>Операция</th>
+            <th>Тип операции</th>
+            <th>Факт трудоемкости</th>
+            <th>Количество</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>@report.OperatorFullName</td>
+                <td>@report.Detail</td>
+                <td>@report.Operation</td>
+                <td>@report.OperationType</td>
+                <td>@report.LaborIntensityFact</td>
+                <td>@report.Quantity</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@report.Id">Редактировать</a> |
+                    <a asp-action="Delete" asp-route-id="@report.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

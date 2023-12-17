@@ -1,0 +1,44 @@
+﻿@model Artem.Models.Report
+
+@{
+    ViewData["Title"] = "Редактировать отчет";
+}
+
+<h1>Редактировать отчет</h1>
+
+<form asp-controller="Reports" asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label for="OperatorFullName">ФИО оператора:</label>
+        <input type="text" class="form-control" id="OperatorFullName" name="OperatorFullName" value="@Model.OperatorFullName" required>
+    </div>
+    <div class="form-group">
+        <label for="Detail">Деталь:</label>
+        <input type="text" class="form-control" id="Detail" name="Detail" value="@Model.Detail" required>
+    </div>
+    <div class="form-group">
+        <label for="Operation">Операция:</label>
+        <input type="number" class="form-control" id="Operation" name="Operation" value="@Model.Operation" required>
+    </div>
+    <div class="form-group">
+        <label for="OperationType">Тип операции:</label>
+        <select class="form-control" id="OperationType" name="OperationType" required>
+            @foreach (var operationType in Enum.GetValues(typeof(Artem.Models.OperationType)))
+            {
+                <option value="@operationType" selected="@(operationType.ToString() == Model.OperationType.ToString())">@operationType</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="LaborIntensityFact">Факт трудоемкости:</label>
+        <input type="number" class="form-control" id="LaborIntensityFact" name="LaborIntensityFact" value="@Model.LaborIntensityFact" required>
+    </div>
+    <div class="form-group">
+        <label for="Quantity">Количество:</label>
+        <input type="number" class="form-control" id="Quantity" name="Quantity" value="@Model.Quantity" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+</form>
+
+<a asp-action="Index">Вернуться к списку</a>
